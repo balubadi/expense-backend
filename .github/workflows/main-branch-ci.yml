@@ -4,9 +4,6 @@ on:
   push:
     branches: [ "main" ]
 
-permissions:
-  contents: read
-
 jobs:
   MainBranchCI:
     name: 'MainBranchCI'
@@ -14,11 +11,6 @@ jobs:
     defaults:
       run:
         shell: bash
-
-    permissions:
-      # Give the default GITHUB_TOKEN write permission to commit and push the
-      # added or changed files to the repository.
-      contents: write
 
     steps:
       - name: Checkout
