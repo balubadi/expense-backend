@@ -1,0 +1,37 @@
+name: 'ReleaseWithTag'
+
+on:
+  push:
+    tags:
+      - '*'
+
+permissions:
+  contents: read
+
+jobs:
+  PR:
+    name: 'ReleaseWithTag'
+    runs-on: self-hosted
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install NodeJS Dependencies
+        run: npm install
+
+      - name: Build
+        run: |
+          echo build the application content
+
+      - name: Release App
+        run: |
+          echo Release the application to artifatory
+        
+
+      - name: Deploy to Dev Env
+        run: |
+          echo Automatically deploying to dev environment
